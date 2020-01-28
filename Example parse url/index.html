@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parse url 1</title>
+</head>
+<body>
+<a href="page.html?page=women&id=1">page1</a>
+
+
+<script>
+	
+
+var data = {
+	"112":{
+		"name":"Яблоко 22",
+		"cost":45,
+		"description": "Яблоки очень вкусные и спелые.",
+		"images":['images/1.jpg','images/2.jpg']
+	},
+    
+    "113":{
+		"name":"Бананы",
+		"cost":100,
+		"description": "Бананы из Африки.",
+		"image":"images/2.jpg"
+	},
+
+	"114":{
+		"name":"Апельсины",
+		"cost":120,
+		"description": "Апельсины солнечные.",
+		"image":"images/3.jpg"
+	}
+
+}
+
+
+   const store_url = 'https://www.jsonstore.io/03573d0edfd7f58193c4e2cc0611823f89dbf9ec045d0f38be0eadc4510aceb6';
+
+  fetch(store_url)
+  .then(response=>response.json())
+  .then(data=>{
+    if (!data.result) return
+    array = data.result
+    console.log(array['112']['images']);
+  })
+
+
+
+    //let json = JSON.stringify(array);
+
+    // fetch(store_url,
+    //   {      
+    //   	headers: {'Content-type': 'application/json'},
+    //     method: 'POST',           
+    //     body: JSON.stringify(data)
+    // }).then(res => res.json())
+    //   .then(data => console.log(data))
+
+
+
+</script>
+</body>
+</html>
